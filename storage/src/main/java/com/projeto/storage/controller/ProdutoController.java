@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.projeto.storage.dto.ProdutoDto;
-import com.projeto.storage.model.Produto;
 import com.projeto.storage.service.ProdutoService;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 
 @RestController
@@ -24,6 +24,13 @@ public class ProdutoController {
         List<ProdutoDto> list = service.findAll();
         return ResponseEntity.ok().body(list);
     }
+
+    @GetMapping(value = "/{id}")
+    public ResponseEntity<ProdutoDto> findById(@PathVariable Long id){
+        ProdutoDto dto = service.findById(id);
+        return ResponseEntity.ok().body(dto);
+    }
+
     
 
 }

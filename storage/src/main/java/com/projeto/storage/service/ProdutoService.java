@@ -2,6 +2,7 @@ package com.projeto.storage.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,7 +26,13 @@ public class ProdutoService {
         for(Produto p : list){
             listDto.add(new ProdutoDto(p));
         }
-        
         return listDto;
+    }
+
+    @Transactional(readOnly = true)
+    public ProdutoDto findById(Long id){
+        Optional<Produto> p = repository.findById(id);
+        Produto produto = p.get();
+        return new ProdutoDto(produto);
     }
 }
