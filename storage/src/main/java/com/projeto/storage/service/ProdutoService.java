@@ -12,6 +12,8 @@ import com.projeto.storage.dto.ProdutoDto;
 import com.projeto.storage.model.Produto;
 import com.projeto.storage.repository.ProdutoRepository;
 
+import jakarta.persistence.EntityNotFoundException;
+
 @Service
 public class ProdutoService {
     
@@ -32,7 +34,8 @@ public class ProdutoService {
     @Transactional(readOnly = true)
     public ProdutoDto findById(Long id){
         Optional<Produto> p = repository.findById(id);
-        Produto produto = p.get();
+        //Produto produto = p.get();
+        Produto produto = p.orElseThrow(() -> new EntityNotFoundException("Não Encontrado"));
         return new ProdutoDto(produto);
     }
 }
