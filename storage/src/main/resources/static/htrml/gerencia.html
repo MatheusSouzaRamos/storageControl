@@ -17,9 +17,19 @@
     </nav>
 
     <button onclick="buscarProdutos()">Todos</button>
-    <input type="number" placeholder="ID" id="ID">
+    <input type="number" placeholder="ID" id="idBuscar">
     <button onclick="buscarProdutosId()">Por ID</button>
+    <br>
+    <input type="text" placeholder="Nome" id="NOMEINSERT">
+    <input type="number" placeholder="Quantidade" id="QNTINSERT" min="0">
+    <input type="number" placeholder="Valor" id="VALORINSERT" min="0">
     <button onclick="inserirProduto()">Inserir</button>
+    <br>
+    <input type="number" placeholder="id" min="1" id="idupdate">
+    <input type="text" placeholder="Nome" id="nomeupdate">
+    <input type="number" placeholder="Quantidade" id="qntupdate" min="0">
+    <input type="number" placeholder="Valor" id="valorupdate" min="0">
+
     <button onclick="updateProduto()">Update</button>
     <button onclick="deletarProduto()">Deletar</button>
 
