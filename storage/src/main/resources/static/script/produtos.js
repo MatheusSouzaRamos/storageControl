@@ -167,3 +167,41 @@ function alterarQuantidadeProduto(){
         console.log("Erro: ", erro)
     })
 }
+
+function incrementarProduto(id){
+    fetch(`http://localhost:8080/produtos/${id}/${1}`, {
+        method: "PUT",
+        headers: {
+            "Accept": "application/json",
+            "Content-type": "application/json"
+        }
+    })
+    .then(res => {
+        if(!res.ok){
+            console.log("Erro ao alterar quantidade do produto.");
+            return;
+        }
+    })
+    .catch(erro => {
+        console.log("Erro: ", erro)
+    })
+}
+
+function decrementarProduto(id){
+    fetch(`http://localhost:8080/produtos/${id}/${-1}`, {
+        method: "PUT",
+        headers: {
+            "Accept": "application/json",
+            "Content-type": "application/json"
+        }
+    })
+    .then(res => {
+        if(!res.ok){
+            console.log("Erro ao alterar quantidade do produto.");
+            return;
+        }
+    })
+    .catch(erro => {
+        console.log("Erro: ", erro)
+    })
+}
