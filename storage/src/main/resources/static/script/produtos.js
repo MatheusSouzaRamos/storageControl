@@ -140,3 +140,30 @@ function deletarProduto(){
         console.log("Erro: ", erro);
     })
 }
+
+function alterarQuantidadeProduto(){
+    let id = document.getElementById("idAlterar").value;
+    let qnt = document.getElementById("quantidadeAlterar").value;
+
+    if(!id || !qnt){
+        alert("Insira valores válidos");
+        return;
+    }
+
+    fetch(`http://localhost:8080/produtos/${id}/${qnt}`, {
+        method: "PUT",
+        headers: {
+            "Accept": "application/json",
+            "Content-type": "application/json"
+        }
+    })
+    .then(res => {
+        if(!res.ok){
+            console.log("Erro ao alterar quantidade do produto.");
+            return;
+        }
+    })
+    .catch(erro => {
+        console.log("Erro: ", erro)
+    })
+}
