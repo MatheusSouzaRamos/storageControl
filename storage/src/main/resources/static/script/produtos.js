@@ -114,3 +114,29 @@ function updateProduto(){
         console.log("Erro: ", erro)
     })
 }
+
+function deletarProduto(){
+    let id = document.getElementById("iddeletar").value;
+
+    if(!id){
+        alert("Insira um Id válido.");
+        return;
+    }
+
+    fetch(`http://localhost:8080/produtos/${id}`,{
+        method: "DELETE",
+        headers: {
+            "Accept": "application/json",
+            "Content-type": "application/json"
+        },
+    })
+    .then(res => {
+        if(!res.ok){
+            console.log("Erro ao deletar produto.")
+            return;
+        }
+    })
+    .catch(erro => {
+        console.log("Erro: ", erro);
+    })
+}
