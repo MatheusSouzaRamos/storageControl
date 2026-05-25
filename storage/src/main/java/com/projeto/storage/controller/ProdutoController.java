@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.PutMapping;
 
 @RestController
-@CrossOrigin("*")
+@CrossOrigin(origins =  "*")
 @RequestMapping(value = "/produtos")
 public class ProdutoController {
     @Autowired
