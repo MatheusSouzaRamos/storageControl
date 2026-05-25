@@ -53,4 +53,18 @@ public class ProdutoController {
         return ResponseEntity.noContent().build();
     }
 
+
+    @PutMapping(value = "/{id}/{qnt}")
+    public ResponseEntity<ProdutoDto> alterarQuantidade(@PathVariable Long id, @PathVariable int qnt){
+        ProdutoDto entity = service.findById(id);
+        
+        int valor = entity.getQuantidade() + qnt;
+        if(valor < 0)
+            valor = 0;
+
+        entity.setQuantidade(valor);
+        entity = service.update(id, entity);
+        return ResponseEntity.ok().body(entity);
+    }
+
 }
