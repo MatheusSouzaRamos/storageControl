@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
+import com.projeto.storage.service.Exception.DatabaseException;
 import com.projeto.storage.service.Exception.EntityNotFoundException;
 
 import jakarta.servlet.http.HttpServletRequest;
@@ -24,5 +25,17 @@ public class ResourceExceptionHandler {
         err.setPath(request.getRequestURI());
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(err);
     }
+
+    @ExceptionHandler(DatabaseException.class)
+    public ResponseEntity<StandardError> databaseException(DatabaseException e, HttpServletRequest request){
+        StandardError err = new StandardError();
+        HttpStatus status = HttpStatus.BAD_REQUEST;
+        err.setTimeInstant(Instant.now());
+        err.setStatus(status.value());
+        err.setError("Not Found");
+        err.setPath(request.getRequestURI());
+        return ResponseEntity.status(status).body(err);
+    }
+
 
 }
