@@ -59,6 +59,7 @@ public class ProdutoService {
         entity.setNome(dto.getNome());
         entity.setQuantidade(dto.getQuantidade());
         entity.setValor(dto.getValor());
+        repository.save(entity);
         return new ProdutoDto(entity);
     }
 
