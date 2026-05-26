@@ -15,19 +15,9 @@ function buscarProdutos(){
 
         const resultado = document.getElementById("resultadoBuscaProduto");
 
-        resultado.innerHTML = `<table border="1">
-                <tr>
-                    <th>ID</th>
-                    <th>Nome</th>
-                    <th>Diminuir</th>
-                    <th>Quantidade</th>
-                    <th>Aumentar</th>
-                    <th>Valor</th>
-                </tr>
-                `;
-
+        let linhas = "";
         for(const el of data){
-            resultado.innerHTML += `
+            linhas += `
             <tr>
                 <td>${el.id}</td>
                 <td>${el.nome}</td>
@@ -37,7 +27,23 @@ function buscarProdutos(){
                 <td>${el.valor}</td>
             </tr>`
         }
-        resultado.innerHTML += `</table>`
+
+        resultado.innerHTML = `
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Diminuir</th>
+                    <th>Quantidade</th>
+                    <th>Aumentar</th>
+                    <th>Valor</th>
+                </tr>
+            </thead>
+                <tbody>
+                    ${linhas}
+                </tbody>
+        </table>`;
 
     })
     .catch(erro => console.log("Erro", erro))
@@ -114,19 +120,9 @@ function buscarProdutosNome(){
 
         const resultado = document.getElementById("resultadoBuscaProduto");
 
-        resultado.innerHTML = `<table border="1">
-                <tr>
-                    <th>ID</th>
-                    <th>Nome</th>
-                    <th>Diminuir</th>
-                    <th>Quantidade</th>
-                    <th>Aumentar</th>
-                    <th>Valor</th>
-                </tr>
-                `;
-
+        let linhas = "";
         for(const el of data){
-            resultado.innerHTML += `
+            linhas += `
             <tr>
                 <td>${el.id}</td>
                 <td>${el.nome}</td>
@@ -136,11 +132,28 @@ function buscarProdutosNome(){
                 <td>${el.valor}</td>
             </tr>`
         }
-        resultado.innerHTML += `</table>`
+
+        resultado.innerHTML = `
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Diminuir</th>
+                    <th>Quantidade</th>
+                    <th>Aumentar</th>
+                    <th>Valor</th>
+                </tr>
+            </thead>
+                <tbody>
+                    ${linhas}
+                </tbody>
+        </table>`;
 
     })
     .catch(erro => console.log("Erro", erro))
 }
+
 
 function inserirProduto(){
     let nomeInsert = document.getElementById("NOMEINSERT").value;
