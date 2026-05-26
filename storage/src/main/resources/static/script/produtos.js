@@ -85,9 +85,9 @@ function buscarProdutosId(){
             <tr>
                 <th>${data.id}</th>
                 <th>${data.nome}</th>
-                <th><button onclick="incrementarProduto(${data.id})">+</button></th>
-                <th>${data.quantidade}</th>
                 <th><button onclick="decrementarProduto(${data.id})">-</button></th>
+                <th>${data.quantidade}</th>
+                <th><button onclick="incrementarProduto(${data.id})">+</button></th>
                 <th>${data.valor}</th>
             </tr>
         `
@@ -153,7 +153,6 @@ function buscarProdutosNome(){
     })
     .catch(erro => console.log("Erro", erro))
 }
-
 
 function inserirProduto(){
     let nomeInsert = document.getElementById("NOMEINSERT").value;
