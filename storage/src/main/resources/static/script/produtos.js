@@ -232,3 +232,22 @@ function decrementarProduto(id){
         console.log("Erro: ", erro)
     })
 }
+
+function consultaGeral(){
+    fetch("http://localhost:8080/produtos/consultaGeral", {
+        method: "GET",
+        headers: {
+            "Accept": "application/json"
+        }
+    })
+    .then(res =>{
+        if(!res.ok) throw new Error("Erro ao consultar métricas.");
+        return res.json();
+    })
+    .then(data => {
+        console.log("Métricas gerais: ", data);
+    })
+    .catch(erro => {
+        console.log("Erro: ", erro)
+    })
+}
