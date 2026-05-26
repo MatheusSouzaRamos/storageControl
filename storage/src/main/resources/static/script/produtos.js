@@ -88,6 +88,22 @@ function buscarProdutosNome(){
     })
     .then(data => {
         console.log("Produtos: ", data);
+
+        const resultado = document.getElementById("resultadoBuscaProduto");
+
+        resultado.innerHTML = `<ol>`;
+
+        for(const el of data){
+            resultado.innerHTML += `
+                <li>
+                    ${el.id}
+                    ${el.nome}
+                    ${el.quantidade}
+                    ${el.valor}
+                </li>`;
+        }
+
+        resultado.innerHTML += `</ol>`;
     })
     .catch(erro => {
         console.log("Erro ao buscar produtos: ", erro)
