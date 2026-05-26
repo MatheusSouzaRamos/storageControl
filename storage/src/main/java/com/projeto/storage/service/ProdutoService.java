@@ -1,5 +1,6 @@
 package com.projeto.storage.service;
 
+import java.lang.foreign.Linker.Option;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -39,6 +40,16 @@ public class ProdutoService {
         //Produto produto = p.get();
         Produto produto = p.orElseThrow(() -> new EntityNotFoundException("Não Encontrado"));
         return new ProdutoDto(produto);
+    }
+
+    @Transactional(readOnly = true)
+    public List<ProdutoDto> findByNome(String nome){
+        List<Produto> produtos = repository.findByNomeContainingIgnoreCase(nome);
+        List<ProdutoDto> dto = new ArrayList<>();
+        for(Produto p : produtos){
+            dto.add(new ProdutoDto(p));
+        }
+        return dto;
     }
 
     //update

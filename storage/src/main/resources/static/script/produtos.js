@@ -38,6 +38,33 @@ function buscarProdutosId(){
     .catch(erro => console.log("Erro: ", erro));
 }
 
+function buscarProdutosNome(){
+    let nome = document.getElementById("nomeBuscar").value;
+    console.log(nome)
+
+    if(!nome || nome.trim() === ""){
+        alert("Campo inválido.");
+        return;
+    }
+
+    fetch(`http://localhost:8080/produtos/buscar/${nome}`, {
+        method: "GET",
+        headers: {
+            "Accept": "application/json"
+        }
+    })
+    .then(res => {
+        if(!res.ok) throw new Error("Erro ao buscar produtos.");
+        return res.json();
+    })
+    .then(data => {
+        console.log("Produtos: ", data);
+    })
+    .catch(erro => {
+        console.log("Erro ao buscar produtos: ", erro)
+    })
+}
+
 function inserirProduto(){
     let nomeInsert = document.getElementById("NOMEINSERT").value;
     let qntInsert = document.getElementById("QNTINSERT").value;
@@ -47,7 +74,7 @@ function inserirProduto(){
     console.log(qntInsert);
     console.log(valorInsert);
 
-    if(!nomeInsert || nomeInsert.trim() == "" || !qntInsert || !valorInsert){
+    if(!nomeInsert || nomeInsert.trim() === "" || !qntInsert || !valorInsert){
         alert('Campos inválidos!');
         return;
     }
@@ -87,7 +114,7 @@ function updateProduto(){
     console.log(qntupdate);
     console.log(valorupdate);
 
-    if(!idupdate || !nomeupdate || nomeupdate.trim() == "" || !qntupdate || !valorupdate){
+    if(!idupdate || !nomeupdate || nomeupdate.trim() === "" || !qntupdate || !valorupdate){
         alert('Campos inválidos!');
         return;
     }

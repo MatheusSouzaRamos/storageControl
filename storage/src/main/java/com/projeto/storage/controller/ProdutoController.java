@@ -37,6 +37,12 @@ public class ProdutoController {
         return ResponseEntity.ok().body(dto);
     }
 
+    @GetMapping(value = "/buscar/{nome}")
+    public ResponseEntity<List<ProdutoDto>> findByNome(@PathVariable String nome){
+        List<ProdutoDto> produtos = service.findByNome(nome);
+        return ResponseEntity.ok().body(produtos);
+    }
+
     @PostMapping
     public ResponseEntity<ProdutoDto> insert(@RequestBody ProdutoDto dto){
         dto = service.insert(dto);
