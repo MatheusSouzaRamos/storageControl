@@ -82,4 +82,16 @@ public class ProdutoService {
             throw new DatabaseException("Integridade violada");
         }
     }
+
+    @Transactional(readOnly = true)
+    public List<Long> estoqueGeral(){
+        List<Long> list = new ArrayList<>();
+        Long produtosDisponiveis = repository.countByQuantidadeGreaterThan(0);
+        Long totalItens = repository.totalItens();
+        Long semEstoque = repository.countByQuantidadeEquals(0);
+        list.add(produtosDisponiveis);
+        list.add(totalItens);
+        list.add(semEstoque);
+        return list;
+    }
 }
