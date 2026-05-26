@@ -12,18 +12,19 @@
         <h1>Estoque 3.000</h1>
     </header>
     <nav>
-        <a href="gerencia.html">Gerencia</a>
+        <a href="gerencia.html">Gerência</a>
         <a href="produtos.html">Produtos</a>
     </nav>
     <main>
         <div id="resultadoConsultaGeral" class="card-consulta"></div>
 
-        <input type="number" placeholder="ID" id="idBuscar">
-        <button onclick="buscarProdutosId()">Por ID</button>
-        <br>
-        <input type="text" id="nomeBuscar" placeholder="Nome buscar">
-        <button onclick="buscarProdutosNome()">Buscar por nome</button>
-        <br>
+        <div class="buscarGerencia">
+            <input type="number" placeholder="ID" id="idBuscar" >
+            <button onclick="buscarProdutosId()" class="botaoGerencia">Por ID</button>
+            <input type="text" id="nomeBuscar" placeholder="Nome buscar">
+            <button onclick="buscarProdutosNome()" class="botaoGerencia">Buscar por nome</button>
+        </div>
+
 
         <button onclick="buscarProdutos()">Atualizar</button>
 

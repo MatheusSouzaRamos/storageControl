@@ -89,10 +89,17 @@ nav a:hover {
 .sem-estoque{
     background-color: rgb(184, 78, 78);
 }
+
 .table-produtos{
     width: 80%;
     margin: auto;
-    background-color: rgb(128, 95, 52);
+    background-color: rgb(255, 255, 255);
     list-style: none;
     padding: 20px;
+}
+
+.buscarGerencia{
+    margin: auto;
+    width: 80%;
+    /* margin-left: -20px; */
 }
