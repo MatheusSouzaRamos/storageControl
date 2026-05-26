@@ -24,12 +24,12 @@ function buscarProdutos(){
                 <td><button onclick="decrementarProduto(${el.id})">-</button></td>
                 <td>${el.quantidade}</td>
                 <td><button onclick="incrementarProduto(${el.id})">+</button></td>
-                <td>${el.valor}</td>
+                <td class="td-valor">R$ ${el.valor}</td>
             </tr>`
         }
 
         resultado.innerHTML = `
-        <table border="1">
+        <table>
             <thead>
                 <tr>
                     <th>ID</th>
@@ -72,7 +72,7 @@ function buscarProdutosId(){
         const resultado = document.getElementById("resultadoBuscaProduto");
 
         resultado.innerHTML = `
-            <table border="1">
+            <table>
                 <tr>
                     <th>ID</th>
                     <th>Nome</th>
@@ -83,12 +83,12 @@ function buscarProdutosId(){
                 </tr>
 
             <tr>
-                <th>${data.id}</th>
-                <th>${data.nome}</th>
-                <th><button onclick="decrementarProduto(${data.id})">-</button></th>
-                <th>${data.quantidade}</th>
-                <th><button onclick="incrementarProduto(${data.id})">+</button></th>
-                <th>${data.valor}</th>
+                <td>${data.id}</td>
+                <td>${data.nome}</td>
+                <td><button onclick="decrementarProduto(${data.id})">-</button></td>
+                <td>${data.quantidade}</td>
+                <td><button onclick="incrementarProduto(${data.id})">+</button></td>
+                <td class="td-valor">R$ ${data.valor}</td>
             </tr>
         `
     })
@@ -129,12 +129,12 @@ function buscarProdutosNome(){
                 <td><button onclick="decrementarProduto(${el.id})">-</button></td>
                 <td>${el.quantidade}</td>
                 <td><button onclick="incrementarProduto(${el.id})">+</button></td>
-                <td>${el.valor}</td>
+                <td class="td-valor">R$ ${el.valor}</td>
             </tr>`
         }
 
         resultado.innerHTML = `
-        <table border="1">
+        <table>
             <thead>
                 <tr>
                     <th>ID</th>
