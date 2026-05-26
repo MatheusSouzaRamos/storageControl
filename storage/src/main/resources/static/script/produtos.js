@@ -11,21 +11,33 @@ function buscarProdutos(){
     })
     .then(data => {
         console.log("Produtos: ", data);
+        data.sort((a, b) => a.id - b.id);
 
         const resultado = document.getElementById("resultadoBuscaProduto");
 
-        resultado.innerHTML = `<ol>`
+        resultado.innerHTML = `<table border="1">
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Diminuir</th>
+                    <th>Quantidade</th>
+                    <th>Aumentar</th>
+                    <th>Valor</th>
+                </tr>
+                `;
 
         for(const el of data){
             resultado.innerHTML += `
-            <li>
-                ${el.id}
-                ${el.nome}
-                ${el.quantidade}
-                ${el.valor}
-            </li>`
+            <tr>
+                <td>${el.id}</td>
+                <td>${el.nome}</td>
+                <td><button onclick="decrementarProduto(${el.id})">-</button></td>
+                <td>${el.quantidade}</td>
+                <td><button onclick="incrementarProduto(${el.id})">+</button></td>
+                <td>${el.valor}</td>
+            </tr>`
         }
-        resultado.innerHTML += `</ol>`
+        resultado.innerHTML += `</table>`
 
     })
     .catch(erro => console.log("Erro", erro))
@@ -54,14 +66,24 @@ function buscarProdutosId(){
         const resultado = document.getElementById("resultadoBuscaProduto");
 
         resultado.innerHTML = `
-            <ol>
-                <li>
-                    ${data.id}
-                    ${data.nome}
-                    ${data.quantidade}
-                    ${data.valor}
-                </li>
-            </ol>
+            <table border="1">
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Diminuir</th>
+                    <th>Quantidade</th>
+                    <th>Aumentar</th>
+                    <th>Valor</th>
+                </tr>
+
+            <tr>
+                <th>${data.id}</th>
+                <th>${data.nome}</th>
+                <th><button onclick="incrementarProduto(${data.id})">+</button></th>
+                <th>${data.quantidade}</th>
+                <th><button onclick="decrementarProduto(${data.id})">-</button></th>
+                <th>${data.valor}</th>
+            </tr>
         `
     })
     .catch(erro => console.log("Erro: ", erro));
@@ -88,26 +110,36 @@ function buscarProdutosNome(){
     })
     .then(data => {
         console.log("Produtos: ", data);
+        data.sort((a, b) => a.id - b.id);
 
         const resultado = document.getElementById("resultadoBuscaProduto");
 
-        resultado.innerHTML = `<ol>`;
+        resultado.innerHTML = `<table border="1">
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Diminuir</th>
+                    <th>Quantidade</th>
+                    <th>Aumentar</th>
+                    <th>Valor</th>
+                </tr>
+                `;
 
         for(const el of data){
             resultado.innerHTML += `
-                <li>
-                    ${el.id}
-                    ${el.nome}
-                    ${el.quantidade}
-                    ${el.valor}
-                </li>`;
+            <tr>
+                <td>${el.id}</td>
+                <td>${el.nome}</td>
+                <td><button onclick="decrementarProduto(${el.id})">-</button></td>
+                <td>${el.quantidade}</td>
+                <td><button onclick="incrementarProduto(${el.id})">+</button></td>
+                <td>${el.valor}</td>
+            </tr>`
         }
+        resultado.innerHTML += `</table>`
 
-        resultado.innerHTML += `</ol>`;
     })
-    .catch(erro => {
-        console.log("Erro ao buscar produtos: ", erro)
-    })
+    .catch(erro => console.log("Erro", erro))
 }
 
 function inserirProduto(){

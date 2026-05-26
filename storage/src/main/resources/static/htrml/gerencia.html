@@ -7,7 +7,7 @@
     <link rel="shortcut icon" href="../img/ico.ico" type="image/x-icon">
     <link rel="stylesheet" href="../css/style.css">
 </head>
-<body onload="consultaGeral()">
+<body onload="consultaGeral(); buscarProdutos()">
     <header>
         <h1>Estoque 3.000</h1>
     </header>
@@ -18,9 +18,7 @@
     <main>
         <div id="resultadoConsulta" class="card-consulta"></div>
 
-        <div id="resultadoBuscaProduto"></div>
-
-        <button onclick="buscarProdutos()">Atualizar</button>
+        
 
         <input type="number" placeholder="ID" id="idBuscar">
         <button onclick="buscarProdutosId()">Por ID</button>
@@ -28,6 +26,11 @@
         <input type="text" id="nomeBuscar" placeholder="Nome buscar">
         <button onclick="buscarProdutosNome()">Buscar por nome</button>
         <br>
+
+        <button onclick="buscarProdutos()">Atualizar</button>
+
+        <div id="resultadoBuscaProduto" class="table-produtos"></div>
+
         <!--
             <br><br>
             <button onclick="consultaGeral()">Consulta Geral</button>
