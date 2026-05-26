@@ -7,7 +7,7 @@
     <link rel="shortcut icon" href="../img/ico.ico" type="image/x-icon">
     <link rel="stylesheet" href="../css/style.css">
 </head>
-<body>
+<body onload="consultaGeral()">
     <header>
         <h1>Gerencia de Estoque</h1>
     </header>
@@ -15,6 +15,9 @@
         <a href="gerencia.html">Gerencia</a>
         <a href="produtos.html">Produtos</a>
     </nav>
+
+    <div id="resultadoConsulta"></div>
+
 
     <button onclick="buscarProdutos()">Todos</button>
     <input type="number" placeholder="ID" id="idBuscar">
@@ -40,8 +43,11 @@
     <input type="number" min="1" id="idAlterar" placeholder="id">
     <input type="number" id="quantidadeAlterar" placeholder="Quantidade">
     <button onclick="alterarQuantidadeProduto()">Alterar Quantidade</button>
+
+    <!--
     <br><br>
     <button onclick="consultaGeral()">Consulta Geral</button>
+    -->
 
     <script src="../script/produtos.js"></script>
 </body>

@@ -2,3 +2,33 @@
     margin: 0px;
     padding: 0px;
 }
+
+header {
+    height: 100px;
+    width: auto;
+    text-align: center;
+    background-color: blue;
+    
+}
+
+h1 {
+    padding-top: 40px;
+    color: white;
+    
+}
+
+#card-consulta{
+    text-align: center;
+    background-color: white;
+    border: 2px solid black;
+    width: 500px;
+    height: 200px;
+}
+
+.card-consulta-iten{
+   text-align: center;
+    background-color: white;
+    border: 2px solid black;
+    width: 500px;
+    height: 200px;
+}

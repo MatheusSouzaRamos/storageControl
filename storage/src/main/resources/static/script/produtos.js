@@ -246,6 +246,26 @@ function consultaGeral(){
     })
     .then(data => {
         console.log("Métricas gerais: ", data);
+
+        const resultado = document.getElementById("resultadoConsulta");
+
+        resultado.innerHTML = `
+                <div class=".card-consulta-iten">
+                    <h3>Produtos Disponíveis</h3>
+                    <p>${data[0]}</p>
+                </div>
+
+                <div class=".card-consulta-iten">
+                    <h3>Total de Itens</h3>
+                    <p>${data[1]}</p>
+                </div>
+
+                <div class=".card-consulta-iten">
+                    <h3>Sem Estoque</h3>
+                    <p>${data[1]}</p>
+                </div>
+        `;
+
     })
     .catch(erro => {
         console.log("Erro: ", erro)
