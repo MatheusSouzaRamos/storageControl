@@ -9,46 +9,30 @@
 </head>
 <body onload="consultaGeral()">
     <header>
-        <h1>Gerencia de Estoque</h1>
+        <h1>Estoque 3.000</h1>
     </header>
     <nav>
         <a href="gerencia.html">Gerencia</a>
         <a href="produtos.html">Produtos</a>
     </nav>
+    <main>
+        <div id="resultadoConsulta" class="card-consulta"></div>
 
-    <div id="resultadoConsulta"></div>
+        <div id="resultadoBuscaProduto"></div>
 
+        <button onclick="buscarProdutos()">Atualizar</button>
 
-    <button onclick="buscarProdutos()">Todos</button>
-    <input type="number" placeholder="ID" id="idBuscar">
-    <button onclick="buscarProdutosId()">Por ID</button>
-    <br>
-    <input type="text" id="nomeBuscar" placeholder="Nome buscar">
-    <button onclick="buscarProdutosNome()">Buscar por nome</button>
-    <br>
-    <input type="text" placeholder="Nome" id="NOMEINSERT">
-    <input type="number" placeholder="Quantidade" id="QNTINSERT" min="0">
-    <input type="number" placeholder="Valor" id="VALORINSERT" min="0">
-    <button onclick="inserirProduto()">Inserir</button>
-    <br>
-    <input type="number" placeholder="id" min="1" id="idupdate">
-    <input type="text" placeholder="Nome" id="nomeupdate">
-    <input type="number" placeholder="Quantidade" id="qntupdate" min="0">
-    <input type="number" placeholder="Valor" id="valorupdate" min="0">
-    <button onclick="updateProduto()">Update</button>
-    <br>
-    <input type="number" placeholder="id" id="iddeletar">
-    <button onclick="deletarProduto()">Deletar</button>
-    <br>
-    <input type="number" min="1" id="idAlterar" placeholder="id">
-    <input type="number" id="quantidadeAlterar" placeholder="Quantidade">
-    <button onclick="alterarQuantidadeProduto()">Alterar Quantidade</button>
-
-    <!--
-    <br><br>
-    <button onclick="consultaGeral()">Consulta Geral</button>
-    -->
-
+        <input type="number" placeholder="ID" id="idBuscar">
+        <button onclick="buscarProdutosId()">Por ID</button>
+        <br>
+        <input type="text" id="nomeBuscar" placeholder="Nome buscar">
+        <button onclick="buscarProdutosNome()">Buscar por nome</button>
+        <br>
+        <!--
+            <br><br>
+            <button onclick="consultaGeral()">Consulta Geral</button>
+            -->
+    </main>
     <script src="../script/produtos.js"></script>
 </body>
 </html>

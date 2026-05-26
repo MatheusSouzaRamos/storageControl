@@ -17,18 +17,37 @@ h1 {
     
 }
 
-#card-consulta{
+nav {
+    width: auto;
+    background-color: black;
+    margin-bottom: 10px;
+}
+
+a nav {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.card-consulta{
     text-align: center;
     background-color: white;
     border: 2px solid black;
-    width: 500px;
-    height: 200px;
+
+    margin: auto;
+    width: 80%;
+    height: 100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
 }
 
-.card-consulta-iten{
+.card-consulta-itens{
    text-align: center;
-    background-color: white;
+    background-color: rgb(240, 2, 2);
     border: 2px solid black;
-    width: 500px;
-    height: 200px;
+    width: 200px;
+    height: 60px;
+    margin-top: 10px;
 }

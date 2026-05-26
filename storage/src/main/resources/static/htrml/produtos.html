@@ -15,5 +15,24 @@
         <a href="gerencia.html">Gerencia</a>
         <a href="produtos.html">Produtos</a>
     </nav>
+    <main>
+        <input type="text" placeholder="Nome" id="NOMEINSERT">
+        <input type="number" placeholder="Quantidade" id="QNTINSERT" min="0">
+        <input type="number" placeholder="Valor" id="VALORINSERT" min="0">
+        <button onclick="inserirProduto()">Inserir</button>
+        <br>
+        <input type="number" placeholder="id" min="1" id="idupdate">
+        <input type="text" placeholder="Nome" id="nomeupdate">
+        <input type="number" placeholder="Quantidade" id="qntupdate" min="0">
+        <input type="number" placeholder="Valor" id="valorupdate" min="0">
+        <button onclick="updateProduto()">Update</button>
+        <br>
+        <input type="number" placeholder="id" id="iddeletar">
+        <button onclick="deletarProduto()">Deletar</button>
+        <br>
+        <input type="number" min="1" id="idAlterar" placeholder="id">
+        <input type="number" id="quantidadeAlterar" placeholder="Quantidade">
+        <button onclick="alterarQuantidadeProduto()">Alterar Quantidade</button>
+    </main>
 </body>
 </html>

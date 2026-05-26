@@ -10,7 +10,23 @@ function buscarProdutos(){
         return res.json();
     })
     .then(data => {
-        console.log("Produtos: ", data)
+        console.log("Produtos: ", data);
+
+        const resultado = document.getElementById("resultadoBuscaProduto");
+
+        resultado.innerHTML = `<ol>`
+
+        for(const el of data){
+            resultado.innerHTML += `
+            <li>
+                ${el.id}
+                ${el.nome}
+                ${el.quantidade}
+                ${el.valor}
+            </li>`
+        }
+        resultado.innerHTML += `</ol>`
+
     })
     .catch(erro => console.log("Erro", erro))
 }
@@ -34,6 +50,19 @@ function buscarProdutosId(){
     })
     .then(data => {
         console.log("Produto:", data);
+
+        const resultado = document.getElementById("resultadoBuscaProduto");
+
+        resultado.innerHTML = `
+            <ol>
+                <li>
+                    ${data.id}
+                    ${data.nome}
+                    ${data.quantidade}
+                    ${data.valor}
+                </li>
+            </ol>
+        `
     })
     .catch(erro => console.log("Erro: ", erro));
 }
@@ -250,19 +279,19 @@ function consultaGeral(){
         const resultado = document.getElementById("resultadoConsulta");
 
         resultado.innerHTML = `
-                <div class=".card-consulta-iten">
+                <div class="card-consulta-itens">
                     <h3>Produtos Disponíveis</h3>
                     <p>${data[0]}</p>
                 </div>
 
-                <div class=".card-consulta-iten">
+                <div class="card-consulta-itens">
                     <h3>Total de Itens</h3>
                     <p>${data[1]}</p>
                 </div>
 
-                <div class=".card-consulta-iten">
+                <div class="card-consulta-itens">
                     <h3>Sem Estoque</h3>
-                    <p>${data[1]}</p>
+                    <p>${data[2]}</p>
                 </div>
         `;
 
