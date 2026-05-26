@@ -336,20 +336,20 @@ function consultaGeral(){
     .then(data => {
         console.log("Métricas gerais: ", data);
 
-        const resultado = document.getElementById("resultadoConsulta");
+        const resultado = document.getElementById("resultadoConsultaGeral");
 
         resultado.innerHTML = `
-                <div class="card-consulta-itens">
+                <div class="card-consulta-itens produtos-disponiveis">
                     <h3>Produtos Disponíveis</h3>
                     <p>${data[0]}</p>
                 </div>
 
-                <div class="card-consulta-itens">
+                <div class="card-consulta-itens total-itens">
                     <h3>Total de Itens</h3>
                     <p>${data[1]}</p>
                 </div>
 
-                <div class="card-consulta-itens">
+                <div class="card-consulta-itens sem-estoque">
                     <h3>Sem Estoque</h3>
                     <p>${data[2]}</p>
                 </div>

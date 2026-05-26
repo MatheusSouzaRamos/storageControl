@@ -20,7 +20,8 @@ header {
 }
 
 h1 {
-    color: white; 
+    color: white;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.425);
     font-weight: bold;
     font-size: 36px;
     font-family: 'Times New Roman', Times, serif;
@@ -54,12 +55,9 @@ nav a:hover {
 
 .card-consulta{
     text-align: center;
-    background-color: white;
-    border: 2px solid black;
-
     margin: auto;
-    width: 80%;
-    height: 100px;
+    width: 50%;
+    height: 75px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     justify-items: center;
@@ -67,14 +65,30 @@ nav a:hover {
 }
 
 .card-consulta-itens{
-   text-align: center;
-    background-color: rgb(240, 2, 2);
-    border: 2px solid black;
+    text-align: center;
+    /* border: 2px solid black; */
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.425);
+    border-radius: 5px;
     width: 200px;
     height: 60px;
+
+}
+
+.card-consulta-itens h3 {
     margin-top: 10px;
 }
 
+.produtos-disponiveis {
+    background-color: rgb(81, 173, 81);
+}
+
+.total-itens {
+    background-color: rgb(196, 179, 84);
+}
+
+.sem-estoque{
+    background-color: rgb(184, 78, 78);
+}
 .table-produtos{
     width: 80%;
     margin: auto;
