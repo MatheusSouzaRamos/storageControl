@@ -1,6 +1,5 @@
 package com.projeto.storage.service;
 
-import java.lang.foreign.Linker.Option;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -88,6 +87,8 @@ public class ProdutoService {
         List<Long> list = new ArrayList<>();
         Long produtosDisponiveis = repository.countByQuantidadeGreaterThan(0);
         Long totalItens = repository.totalItens();
+        if(totalItens == null)
+            totalItens = 0L;
         Long semEstoque = repository.countByQuantidadeEquals(0);
         list.add(produtosDisponiveis);
         list.add(totalItens);
