@@ -10,8 +10,6 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import com.projeto.storage.dto.ProdutoDto;
 import com.projeto.storage.service.ProdutoService;
 
-import jakarta.transaction.Transactional;
-
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;

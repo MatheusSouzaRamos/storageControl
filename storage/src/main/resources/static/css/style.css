@@ -4,8 +4,15 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+:root {
+    --cor1: #1e293b;
+    --cor2: #2563eb;
+    --cor3: #d0e2fd;
+    --cor4: white;
+}
+
 body{
-    background-color: #d0e2fd;
+    background-color: var(--cor3);
 }
 
 header {
@@ -15,12 +22,12 @@ header {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-color: #2563eb;
+    background-color: var(--cor2);
     
 }
 
 h1 {
-    color: white;
+    color: var(--cor4);
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.425);
     font-weight: bold;
     font-size: 36px;
@@ -29,7 +36,7 @@ h1 {
 
 nav {
     margin: auto;
-    background-color: #1e293b;
+    background-color: var(--cor1);
     text-align: center;
     margin-bottom: 10px;
     height: 30px;
@@ -40,7 +47,7 @@ nav {
 
 nav a {
     text-decoration: none;
-    color: white;
+    color: var(--cor4);
     cursor: pointer;
     margin: 0 15px;
 }
@@ -49,7 +56,7 @@ nav a:hover {
     color: black;
     padding: 3px;
     border-radius: 3px;
-    background-color: white;
+    background-color: var(--cor4);
     transition-duration: 0.3s;
 }
 
@@ -66,12 +73,10 @@ nav a:hover {
 
 .card-consulta-itens{
     text-align: center;
-    /* border: 2px solid black; */
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.425);
     border-radius: 5px;
     width: 200px;
     height: 60px;
-
 }
 
 .card-consulta-itens h3 {
@@ -93,7 +98,6 @@ nav a:hover {
 .table-produtos{
     width: 80%;
     margin: auto;
-    /* background-color: rgb(255, 255, 255); */
     list-style: none;
     padding: 10px;
 }
@@ -105,15 +109,14 @@ table {
     border-collapse: collapse;
     overflow: hidden;
     border-radius: 5px;
-    background-color: white;
-    /* border: 2px 2px 2px solid black; */
+    background-color: var(--cor4);
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.432);
 }
 
 th {
-    background-color: #2563eb;
+    background-color: var(--cor2);
     padding: 12px;
-    color: white;
+    color: var(--cor4);
 }
 
 td{
@@ -139,7 +142,6 @@ table button {
 }
 
 .buscarGrupo {
-    /* background-color: red; */
     margin-left: 20px;
 }
 
@@ -149,6 +151,11 @@ table button {
     border: 1px solid #ffffff00;
     outline: none;
     box-shadow: none;
+}
+
+.buscarGrupo button {
+    border: 1px solid #000000;
+    cursor: pointer;
 }
 
 #idBuscar{
@@ -161,4 +168,86 @@ table button {
 
 .buscarGrupo button {
     padding: 5px;   
+}
+
+.container-container {
+    display: grid;
+    grid-template-columns: 300px 300px;
+    grid-template-rows: auto auto;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.container {
+    width: 300px;
+    height: 220px;
+    margin: auto;
+    background-color: var(--cor2);
+    margin-top: 10px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.432);
+    border-radius: 5px 5px 5px 5px; 
+
+}
+
+.container h2 {
+    background-color: var(--cor1);
+    color: var(--cor4);
+    font-weight: normal;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px 5px 0 0; 
+}
+
+.container input, .container button {
+    padding: 5px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid #ffffff00;
+    outline: none;
+    box-shadow: none;
+}
+
+.container input {
+    width: 200px;
+}
+
+.container button {
+    width: 100px;
+    margin-left: 30%;
+    border: 1px solid #000000;
+    cursor: pointer;
+}
+
+.h3ProdutosPag {
+    text-align: center;
+    background-color: var(--cor1);
+    width: 180px;
+    margin: auto;
+    margin-top: 15px;
+    padding: 3px;
+    border-radius: 5px;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: normal;
+}
+
+.buttonAtualizar {
+    display: block;
+    width: 100px;
+    margin: auto;
+    border-radius: 5px;
+    outline: none;
+    box-shadow: none;
+    padding: 3px;
+    margin-top: 5px;
+    border: 1px solid #000000;
+    cursor: pointer;
+}
+
+button:active {
+    background-color: #000000;
+    color: white;
 }
