@@ -76,9 +76,7 @@ function buscarProdutos2(){
             <tr>
                 <td>${el.id}</td>
                 <td>${el.nome}</td>
-                <td><button onclick="decrementarProduto(${el.id})">-</button></td>
                 <td>${el.quantidade}</td>
-                <td><button onclick="incrementarProduto(${el.id})">+</button></td>
                 <td class="td-valor">R$ ${el.valor}</td>
             </tr>`
         }
@@ -89,9 +87,7 @@ function buscarProdutos2(){
                 <tr>
                     <th>ID</th>
                     <th>Nome</th>
-                    <th>Diminuir</th>
                     <th>Quantidade</th>
-                    <th>Aumentar</th>
                     <th>Valor</th>
                 </tr>
             </thead>
