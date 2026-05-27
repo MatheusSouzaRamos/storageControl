@@ -14,6 +14,7 @@ function buscarProdutos(){
         data.sort((a, b) => a.id - b.id);
 
         const resultado = document.getElementById("resultadoBuscaProduto");
+        // const resultado2 = document.getElementById("resultadoBuscaProduto2");
 
         let linhas = "";
         for(const el of data){
@@ -44,6 +45,62 @@ function buscarProdutos(){
                     ${linhas}
                 </tbody>
         </table>`;
+
+        // resultado2.innerHTML = resultado.innerHTML;
+
+    })
+    .catch(erro => console.log("Erro", erro))
+}
+
+function buscarProdutos2(){
+    fetch("http://localhost:8080/produtos",{
+        method: "GET",
+        headers: {
+            "Accept" : "application/json",
+        }
+    })
+    .then(res => {
+        if(!res.ok) throw new Error("Erro ao buscar Produtos");
+        return res.json();
+    })
+    .then(data => {
+        console.log("Produtos: ", data);
+        data.sort((a, b) => a.id - b.id);
+
+        const resultado2 = document.getElementById("resultadoBuscaProduto2");
+        // const resultado2 = document.getElementById("resultadoBuscaProduto2");
+
+        let linhas = "";
+        for(const el of data){
+            linhas += `
+            <tr>
+                <td>${el.id}</td>
+                <td>${el.nome}</td>
+                <td><button onclick="decrementarProduto(${el.id})">-</button></td>
+                <td>${el.quantidade}</td>
+                <td><button onclick="incrementarProduto(${el.id})">+</button></td>
+                <td class="td-valor">R$ ${el.valor}</td>
+            </tr>`
+        }
+
+        resultado2.innerHTML = `
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Diminuir</th>
+                    <th>Quantidade</th>
+                    <th>Aumentar</th>
+                    <th>Valor</th>
+                </tr>
+            </thead>
+                <tbody>
+                    ${linhas}
+                </tbody>
+        </table>`;
+
+        // resultado2.innerHTML = resultado.innerHTML;
 
     })
     .catch(erro => console.log("Erro", erro))

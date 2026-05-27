@@ -7,7 +7,7 @@
     <link rel="shortcut icon" href="../img/ico.ico" type="image/x-icon">
     <link rel="stylesheet" href="../css/style.css">
 </head>
-<body>
+<body onload="buscarProdutos2()">
     <header>
         <h1>Produtos</h1>
     </header>
@@ -16,23 +16,40 @@
         <a href="produtos.html">Produtos</a>
     </nav>
     <main>
-        <input type="text" placeholder="Nome" id="NOMEINSERT">
-        <input type="number" placeholder="Quantidade" id="QNTINSERT" min="0">
-        <input type="number" placeholder="Valor" id="VALORINSERT" min="0">
-        <button onclick="inserirProduto()">Inserir</button>
-        <br>
-        <input type="number" placeholder="id" min="1" id="idupdate">
-        <input type="text" placeholder="Nome" id="nomeupdate">
-        <input type="number" placeholder="Quantidade" id="qntupdate" min="0">
-        <input type="number" placeholder="Valor" id="valorupdate" min="0">
-        <button onclick="updateProduto()">Update</button>
-        <br>
-        <input type="number" placeholder="id" id="iddeletar">
-        <button onclick="deletarProduto()">Deletar</button>
-        <br>
-        <input type="number" min="1" id="idAlterar" placeholder="id">
-        <input type="number" id="quantidadeAlterar" placeholder="Quantidade">
-        <button onclick="alterarQuantidadeProduto()">Alterar Quantidade</button>
+        <div>
+            <h2>Inserir Produto</h2>
+            <input type="text" placeholder="Nome" id="NOMEINSERT">
+            <input type="number" placeholder="Quantidade" id="QNTINSERT" min="0">
+            <input type="number" placeholder="Valor" id="VALORINSERT" min="0">
+            <button onclick="inserirProduto()">Inserir</button>
+        </div>
+        <div>
+            <h2>Atualizar Produto</h2>
+            <input type="number" placeholder="id" min="1" id="idupdate">
+            <input type="text" placeholder="Nome" id="nomeupdate">
+            <input type="number" placeholder="Quantidade" id="qntupdate" min="0">
+            <input type="number" placeholder="Valor" id="valorupdate" min="0">
+            <button onclick="updateProduto()">Update</button>
+        </div>
+
+        <div>
+            <h3>Deletar Produto</h3>
+            <input type="number" placeholder="id" id="iddeletar">
+            <button onclick="deletarProduto()">Deletar</button>
+        </div>
+
+        <div>
+            <h3>Quantificar Produto</h3>
+            <p>Neste campo, utilizando o ID, é somado ou subtraído a quantidade informada.</p>
+            <input type="number" id="idAlterar" placeholder="id">
+            <input type="number" id="quantidadeAlterar" placeholder="Quantidade">
+            <button onclick="alterarQuantidadeProduto()">Alterar Quantidade</button>
+        </div>
+        
+        <h3>Produtos Cadastrados</h3>
+        <div id="resultadoBuscaProduto2" class="table-produtos"></div>
+
     </main>
+    <script src="../script/produtos.js"></script>
 </body>
 </html>
