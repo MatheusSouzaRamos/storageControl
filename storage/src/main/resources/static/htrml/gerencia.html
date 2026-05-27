@@ -19,21 +19,21 @@
         <div id="resultadoConsultaGeral" class="card-consulta"></div>
 
         <div class="buscarGerencia">
-            <input type="number" placeholder="ID" id="idBuscar" >
-            <button onclick="buscarProdutosId()" class="botaoGerencia">Por ID</button>
-            <input type="text" id="nomeBuscar" placeholder="Nome buscar">
-            <button onclick="buscarProdutosNome()" class="botaoGerencia">Buscar por nome</button>
+            <div class="buscarGrupo">
+                <input type="number" placeholder="ID" id="idBuscar" >
+                <button onclick="buscarProdutosId()" class="botaoGerencia">Buscar por ID</button>
+            </div>
+            <div class="buscarGrupo">
+                <input type="text" id="nomeBuscar" placeholder="Nome">
+                <button onclick="buscarProdutosNome()" class="botaoGerencia">Buscar por nome</button>
+            </div>
         </div>
 
 
-        <button onclick="buscarProdutos()">Atualizar</button>
+        <!-- <button onclick="buscarProdutos()">Atualizar</button> -->
 
         <div id="resultadoBuscaProduto" class="table-produtos"></div>
 
-        <!--
-            <br><br>
-            <button onclick="consultaGeral()">Consulta Geral</button>
-            -->
     </main>
     <script src="../script/produtos.js"></script>
 </body>

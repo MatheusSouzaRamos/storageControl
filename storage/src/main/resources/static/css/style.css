@@ -95,7 +95,7 @@ nav a:hover {
     margin: auto;
     /* background-color: rgb(255, 255, 255); */
     list-style: none;
-    padding: 20px;
+    padding: 10px;
 }
 
 table {
@@ -127,4 +127,38 @@ td{
 
 table button {
     padding: 3px;
+}
+
+.buscarGerencia{
+    width: 40%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.buscarGrupo {
+    /* background-color: red; */
+    margin-left: 20px;
+}
+
+#idBuscar, #nomeBuscar, .buscarGrupo button {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ffffff00;
+    outline: none;
+    box-shadow: none;
+}
+
+#idBuscar{
+    width: 50px;
+}
+
+#nomeBuscar {
+    width: 150px;
+}
+
+.buscarGrupo button {
+    padding: 5px;   
 }
