@@ -22,9 +22,9 @@ function buscarProdutos(){
             <tr>
                 <td>${el.id}</td>
                 <td>${el.nome}</td>
-                <td><button onclick="decrementarProduto(${el.id})">-</button></td>
+                <td><button onclick="decrementarProduto(${el.id}); atualizarTabela()">-</button></td>
                 <td>${el.quantidade}</td>
-                <td><button onclick="incrementarProduto(${el.id})">+</button></td>
+                <td><button onclick="incrementarProduto(${el.id}); atualizarTabela();">+</button></td>
                 <td class="td-valor">R$ ${el.valor}</td>
             </tr>`
         }
@@ -138,9 +138,9 @@ function buscarProdutosId(){
             <tr>
                 <td>${data.id}</td>
                 <td>${data.nome}</td>
-                <td><button onclick="decrementarProduto(${data.id})">-</button></td>
+                <td><button onclick="decrementarProduto(${data.id}); atualizarTabelaId()">-</button></td>
                 <td>${data.quantidade}</td>
-                <td><button onclick="incrementarProduto(${data.id})">+</button></td>
+                <td><button onclick="incrementarProduto(${data.id}); atualizarTabelaId()">+</button></td>
                 <td class="td-valor">R$ ${data.valor}</td>
             </tr>
         `
@@ -153,7 +153,8 @@ function buscarProdutosNome(){
     console.log(nome)
 
     if(!nome || nome.trim() === ""){
-        alert("Campo inválido.");
+        // alert("Campo inválido.");
+        buscarProdutos()
         return;
     }
 
@@ -179,9 +180,9 @@ function buscarProdutosNome(){
             <tr>
                 <td>${el.id}</td>
                 <td>${el.nome}</td>
-                <td><button onclick="decrementarProduto(${el.id})">-</button></td>
+                <td><button onclick="decrementarProduto(${el.id}); atualizarTabelaNome()">-</button></td>
                 <td>${el.quantidade}</td>
-                <td><button onclick="incrementarProduto(${el.id})">+</button></td>
+                <td><button onclick="incrementarProduto(${el.id}); atualizarTabelaNome()">+</button></td>
                 <td class="td-valor">R$ ${el.valor}</td>
             </tr>`
         }
@@ -409,4 +410,32 @@ function consultaGeral(){
     .catch(erro => {
         console.log("Erro: ", erro)
     })
+}
+
+function atualizarTabela(){
+    setTimeout(() => {
+        buscarProdutos();
+        consultaGeral();
+    }, 100);
+}
+
+function atualizarTabela2(){
+    setTimeout(() => {
+        buscarProdutos2();
+        consultaGeral();
+    }, 100);
+}
+
+function atualizarTabelaId(){
+    setTimeout(() => {
+        buscarProdutosId();
+        consultaGeral();
+    }, 100);
+}
+
+function atualizarTabelaNome(){
+    setTimeout(() => {
+        buscarProdutosNome();
+        consultaGeral();
+    }, 100);
 }

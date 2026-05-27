@@ -25,7 +25,7 @@
                 <br>
                 <input type="number" placeholder="Valor" id="VALORINSERT" min="0">
                 <br>
-                <button onclick="inserirProduto()">Inserir</button>
+                <button onclick="inserirProduto(); atualizarTabela2()">Inserir</button>
             </div>
             <div class="container">
                 <h2>Alterar Produto</h2>
@@ -37,13 +37,13 @@
                 <br>
                 <input type="number" placeholder="Valor" id="valorupdate" min="0">
                 <br>
-                <button onclick="updateProduto()">Alterar</button>
+                <button onclick="updateProduto(); atualizarTabela2()">Alterar</button>
             </div>
             <div class="container">
                 <h2>Deletar Produto</h2>
                 <input type="number" placeholder="id" id="iddeletar" class="input-delete">
                 <br>
-                <button onclick="deletarProduto()">Deletar</button>
+                <button onclick="deletarProduto(); atualizarTabela2()">Deletar</button>
             </div>
             <div class="container">
                 <h2>Quantificar Produto</h2>
@@ -52,7 +52,7 @@
                 <br>
                 <input type="number" id="quantidadeAlterar" placeholder="Quantidade">
                 <br>
-                <button onclick="alterarQuantidadeProduto()">Quantificar</button>
+                <button onclick="alterarQuantidadeProduto(); atualizarTabela2()">Quantificar</button>
             </div>
         </div>
         
