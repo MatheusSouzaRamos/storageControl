@@ -29,3 +29,6 @@ Configure o arquivo `application.properties` com seu usuário e senha do postgre
 ### Executar o frontend
 
 Abra o arquivo `gerencia.html` no navegador ou utilize o Live Server.
+
+
+Imagens disponíveis na pasta do projeto.
