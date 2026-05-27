@@ -18,7 +18,7 @@
     <main>
         <div class="container-container">
             <div class="container">
-                <h2>Inserir Produto</h2>
+                <h2 class="h2Inserir">Inserir Produto</h2>
                 <input type="text" placeholder="Nome" id="NOMEINSERT">
                 <br>
                 <input type="number" placeholder="Quantidade" id="QNTINSERT" min="0">
@@ -37,11 +37,11 @@
                 <br>
                 <input type="number" placeholder="Valor" id="valorupdate" min="0">
                 <br>
-                <button onclick="updateProduto()">Update</button>
+                <button onclick="updateProduto()">Alterar</button>
             </div>
             <div class="container">
                 <h2>Deletar Produto</h2>
-                <input type="number" placeholder="id" id="iddeletar">
+                <input type="number" placeholder="id" id="iddeletar" class="input-delete">
                 <br>
                 <button onclick="deletarProduto()">Deletar</button>
             </div>

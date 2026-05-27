@@ -182,7 +182,7 @@ table button {
 
 .container {
     width: 300px;
-    height: 220px;
+    height: 250px;
     margin: auto;
     background-color: var(--cor2);
     margin-top: 10px;
@@ -199,6 +199,7 @@ table button {
     text-align: center;
     padding: 5px;
     border-radius: 5px 5px 0 0; 
+    margin-bottom: 10px;
 }
 
 .container input, .container button {
@@ -212,6 +213,14 @@ table button {
 
 .container input {
     width: 200px;
+    display: block;
+    margin: auto;
+    margin-top: 0px;
+}
+
+.container .input-delete{
+    display: block;
+    margin-top: 60px;
 }
 
 .container button {
@@ -219,6 +228,7 @@ table button {
     margin-left: 30%;
     border: 1px solid #000000;
     cursor: pointer;
+    margin-top: -15px;
 }
 
 .h3ProdutosPag {
@@ -250,4 +260,15 @@ table button {
 button:active {
     background-color: #000000;
     color: white;
+}
+
+.container p {
+    color: white;
+    margin-left: 5px;
+    /* text-align: justify; */
+    margin-bottom: 10px;
+}
+
+.container .h2Inserir {
+    margin-bottom: 30px;
 }
