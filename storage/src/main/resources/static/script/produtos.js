@@ -346,10 +346,9 @@ function incrementarProduto(id){
         }
     })
     .then(res => {
-        if(!res.ok){
-            console.log("Erro ao alterar quantidade do produto.");
-            return;
-        }
+        if(!res.ok) throw new Error("Erro ao alterar quantidade do produto.");
+        return;
+
     })
     .catch(erro => {
         console.log("Erro: ", erro)
@@ -365,10 +364,8 @@ function decrementarProduto(id){
         }
     })
     .then(res => {
-        if(!res.ok){
-            console.log("Erro ao alterar quantidade do produto.");
-            return;
-        }
+        if(!res.ok) throw new Error("Erro ao alterar quantidade do produto");
+        return;
     })
     .catch(erro => {
         console.log("Erro: ", erro)
